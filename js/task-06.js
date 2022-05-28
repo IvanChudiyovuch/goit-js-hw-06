@@ -9,9 +9,13 @@ function onInputTarget(event) {
 }
 
 function onBlurInputValid(event) {
-  if (event.currentTarget.length !== dataRef.dataset.length) {
+  if (
+    event.currentTarget.value.length < dataRef.dataset.length ||
+    event.currentTarget.value.length > dataRef.dataset.length
+  ) {
     inputRef.classList.add('invalid');
   } else {
+    inputRef.classList.remove('invalid');
     inputRef.classList.add('valid');
   }
 }
