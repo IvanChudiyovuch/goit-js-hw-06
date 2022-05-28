@@ -26,7 +26,7 @@ function onFormSubmit(event) {
   event.preventDefault();
 
   if (
-    event.currentTarget.elements.email.value ||
+    event.currentTarget.elements.email.value === '' ||
     event.currentTarget.elements.password.value === ''
   ) {
     alert('Всі поля форми не заповнені!');
@@ -42,7 +42,6 @@ function onFormSubmit(event) {
     };
 
     console.log(formData);
-
-    event.reset();
   }
+  document.querySelector('.login-form').reset();
 }
